@@ -8,4 +8,17 @@
         return $resul;
     }
 
+    function informaErro($msg){
+        echo '<div class="alert alert-danger" role="alert">';
+        echo $msg;
+        echo '</div>';
+    }
+
+
+    function informaSucesso($msg){
+        echo '<div class="alert alert-success" role="alert">';
+        echo $msg;
+        echo '</div>';
+    }
+
 ?>

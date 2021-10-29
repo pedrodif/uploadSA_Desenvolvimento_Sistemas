@@ -3,7 +3,11 @@
     require_once "cabecalho.php";
     require_once "funcoes.php";
 
-    if (isset($_GET['submit'])) {
+    if (isset($_GET['submit'])){
+        require_once "apiCNPJ.php";
+    }
+    
+    if(isset($_POST['cadastrar']) || isset($_POST['alterar'])){
         require_once "tratativaCNPJ.php";
     }
 
