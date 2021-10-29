@@ -1,5 +1,5 @@
 <?php 
 
-$inicio = "inicio"
+$inicio = "inicio";
 
-?>
+echo "teste atualização palmer";
