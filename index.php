@@ -9,5 +9,4 @@
 <?php 
 
     require_once "rodape.php";
-
-echo "teste atualização palmer";
+?>
