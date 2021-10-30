@@ -60,6 +60,7 @@
         $query = '';
         if(!$flag){
             
+            //alterar os campos para o update 
             $query = "UPDATE cliente SET nome = '$cnpj', email='$email', 
             dtnascimento='$dtnascimento', salario='$salario', modalidades='$modalidades' 
             WHERE id = $id";
