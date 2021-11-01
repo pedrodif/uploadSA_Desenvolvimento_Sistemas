@@ -1,18 +1,29 @@
 <?php
 
-    session_start();
-    include "conexao.php";
     require_once "cabecalho.php";
+    include "conexao.php";
+    require_once "funcoes.php";
 
 
-    $query = "SELECT * FROM  dadosCnpj ";
+    if(isset($_POST['submit'])){
+        $query = "DELETE FROM  dadosCnpj WHERE id={$_POST['id']}";
+        $resultado = $conexao->query($query);
+        if ($resultado) {
+            informaSucesso("Dados deletados com sucesso!");
+            btns();
+            exit();
+        }else{
+            informaErro("Erro ao deletar dados :( ");
+        }
+    }
+
+    
+    $query = "SELECT * FROM  dadosCnpj where id= {$_GET['id']}";
     $resultado = $conexao->query($query);
 
 ?>
 
-<div>
-
-    <table class="table table-striped">
+<table class="table table-striped">
         
         <h2>Lista de Dados</h2>
 
@@ -40,7 +51,6 @@
             <th scope="col">Situação cadastral</th>
             <th scope="col">Abertura Cadastro</th>
             <th scope="col">Data de Criação</th>
-            <th scope="col" colspan="2" class="text-center">Ações</th>
             </tr>
 
         </thead>
@@ -71,32 +81,35 @@
             <td><?= $value['situacao'] ?></td>
             <td><?= date("j/m/Y", strtotime($value['dtSituacao']))?></td>
             <td><?= date("j/m/Y H:i:s", strtotime($value['dtCriacao'])) ?></td>
-            <td><a href="index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
-            <td><a href="deleteCNPJ.php?id=<?= $value['id'] ?>" class="btn btn-danger text-center">Deletar</a></td>
             </tr>
 
             <?php } ?>
 
         </tbody>
 
-    </table>
+</table>
 
-</div>
+<form action="#" method="post">
 
-<div class="form-row">
+        <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
+        
+        <div class="form-row">
 
-    <div class="form-group" col-md-1>
+            <div class="form-group" col-md-1>
+            
+                <input type="submit" name="submit" class="btn btn-danger text-center" value="Deletar">
 
-        <a href="index.php" class="btn btn-primary text-center">Voltar</a>
+                <a href="lista_dados.php" class="btn btn-primary text-center">Voltar</a>
 
-    </div> 
+            </div>
 
-</div>
+        </div> 
+
+</form>
+
 
 <?php
 
     require_once "rodape.php";
 
 ?>
-
-
