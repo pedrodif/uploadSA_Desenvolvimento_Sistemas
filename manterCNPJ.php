@@ -80,7 +80,7 @@
 
             <div class="form-group col-md-6">
                 <label>CÓDIGO E DESCRIÇÃO DA ATIVIDADE ECONÔMICA PRINCIPAL</label>
-                <?php iterable : foreach ($atividade_principal as $value) { ?>
+                <?php foreach ($atividade_principal as $value) { ?>
                 <input type="text" class="form-control" name="atvPrincipal" value="<?= $value->code.'-'.$value->text ?>">
                 <?php } ?>
             </div>
@@ -175,7 +175,7 @@
                 <?php else: ?>
                 <input type="submit" name="alterar" class="btn btn-success text-center" value="Alterar">
                 <?php endif ?>
-                <a href="lista_dados.php" class="btn btn-dark text-center">Ver Dados</a>
+                <a href="lista_dadosCNPJ.php" class="btn btn-dark text-center">Ver Dados</a>
 
             </div> 
          </div>
