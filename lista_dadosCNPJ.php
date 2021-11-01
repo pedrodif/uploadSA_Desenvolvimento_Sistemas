@@ -11,7 +11,7 @@
 ?>
 
 <div>
-    
+
     <table class="table table-striped">
         
         <h2>Lista de Dados</h2>
@@ -69,7 +69,7 @@
             <td><?= $value['email'] ?></td>
             <td><?= $value['telefone'] ?></td>
             <td><?= $value['situacao'] ?></td>
-            <td><?= $value['dtSituacao'] ?></td>
+            <td><?= date("j/m/Y", strtotime($value['dtSituacao']))?></td>
             <td><?= date("j/m/Y H:i:s", strtotime($value['dtCriacao'])) ?></td>
             <td><a href="index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
             <td><a href="delete.php?id=<?= $value['id'] ?>" class="btn btn-danger text-center">Deletar</a></td>

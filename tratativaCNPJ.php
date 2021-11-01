@@ -7,6 +7,7 @@
 
     require_once "conexao.php";
 
+
     $array_erro = [];
 
     empty($_POST['cnpj']) ? $array_erro['cnpj'] = "Campo CNPJ não preenchido" : $cnpj = trim($_POST['cnpj']);
@@ -55,24 +56,26 @@
 
         }
     }  else {
-        //criamos a query
-        
+    
         $query = '';
+
         if(!$flag){
             
             //alterar os campos para o update 
-            $query = "UPDATE cliente SET nome = '$cnpj', email='$email', 
-            dtnascimento='$dtnascimento', salario='$salario', modalidades='$modalidades' 
-            WHERE id = $id";
+            $query = "UPDATE dadosCnpj SET cnpj = '$cnpj', tipo = '$tipo',
+            abertura = '$abertura', nome = '$nome', fantasia = '$fantasia ', naturezaJuridica = '$natureza_juridica', atvPrincipal = '$atividade_principal', atvSecundaria = '$atividades_secundarias',
+            cep = '$cep', logradouro = '$logradouro', 	numero = '$numero', complemento = '$complemento', bairro = '$bairro', municipio = '$municipio',
+            uf = '$uf', email = '$email', telefone = '$telefone', situacao = '$situacao', dtSituacao = '$data_situacao', 
+            WHERE id = {$_POST['id']}";
             
         }else{
-                $query = "INSERT INTO dadosCnpj values(NULL, '$nome', '$tipo',
+                $query = "INSERT INTO dadosCnpj values(NULL, '$cnpj', '$tipo',
             '$abertura', '$nome', '$fantasia ', '$natureza_juridica', '$atividade_principal', '$atividades_secundarias',
             '$cep', '$logradouro', '$numero', '$complemento', '$bairro', '$municipio',
             '$uf', '$email', '$telefone', '$situacao', '$data_situacao',  NOW())";
            
         }
-        //execução da query acontece aqui
+
         $resultado = $conexao->query($query);
         if($resultado){
             informaSucesso('Operação realizada com sucesso!');

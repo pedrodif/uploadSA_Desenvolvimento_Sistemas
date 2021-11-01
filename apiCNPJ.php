@@ -18,6 +18,4 @@
         curl_close($ch);
     }
  
-
-
 ?>

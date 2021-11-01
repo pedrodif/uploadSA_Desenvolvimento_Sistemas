@@ -8,6 +8,9 @@
     if (isset($_GET['submit'])){
         require_once "apiCNPJ.php";
     }
+    elseif(isset($_GET['id'])){
+        require_once "seleciona_dadosCNPJ.php";
+    }
     
     if(isset($_POST['cadastrar']) || isset($_POST['alterar'])){
         require_once "tratativaCNPJ.php";
@@ -77,7 +80,7 @@
 
 
         <div class="form-row">
-
+            
             <div class="form-group col-md-6">
                 <label>CÓDIGO E DESCRIÇÃO DA ATIVIDADE ECONÔMICA PRINCIPAL</label>
                 <?php foreach ($atividade_principal as $value) { ?>
