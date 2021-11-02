@@ -81,7 +81,6 @@ if (count($array_erro) > 0) {
             $uf
         );
         $conexao->close();
-        //pag_inicial_consulta();
         require_once "../rodape.php";
         exit();
     } else {

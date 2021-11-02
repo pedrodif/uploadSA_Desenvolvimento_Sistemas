@@ -80,9 +80,29 @@
         if($resultado){
             informaSucesso('Operação realizada com sucesso!');
 
-            unset($nome, $email, $dtnascimento, $salario, $modalidades);
+            unset(
+                $cnpj, 
+                $tipo,
+                $abertura, 
+                $nome, 
+                $fantasia, 
+                $natureza_juridica, 
+                $atividade_principal, 
+                $atividades_secundarias,
+                $cep, 
+                $logradouro, 
+                $numero, 
+                $complemento, 
+                $bairro, 
+                $municipio,
+                $uf, 
+                $email, 
+                $telefone, 
+                $situacao, 
+                $data_situacao
+            );
+            
             $conexao->close();
-            //pag_inicial_consulta();
             require_once "rodape.php";
             exit();
         }else{
