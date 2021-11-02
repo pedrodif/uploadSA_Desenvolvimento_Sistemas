@@ -1,6 +1,6 @@
 <?php 
     
-    include "conexao.php";
+    include "../conexao.php";
 
     $flag = 0;
 
@@ -15,5 +15,3 @@
             }
         }
     }
-
-?>
