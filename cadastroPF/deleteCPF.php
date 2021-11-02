@@ -1,25 +1,25 @@
 <?php
 
-    require_once "../cabecalho.php";
-    include "../conexao.php";
-    require_once "../funcoes.php";
+require_once "./cabecalho.php";
+include "./conexao.php";
+require_once "./funcoes.php";
 
 
-    if (isset($_POST['submit'])) {
-        $query = "DELETE FROM  dadosCpf WHERE id={$_POST['id']}";
-        $resultado = $conexao->query($query);
-        if ($resultado) {
-            informaSucesso("Dados deletados com sucesso!");
-            btns();
-            exit();
-        } else {
-            informaErro("Erro ao deletar dados :( ");
-        }
-    }
-
-
-    $query = "SELECT * FROM  dadosCnpj where id= {$_GET['id']}";
+if (isset($_POST['submit'])) {
+    $query = "DELETE FROM  dadosCpf WHERE id={$_POST['id']}";
     $resultado = $conexao->query($query);
+    if ($resultado) {
+        informaSucesso("Dados deletados com sucesso!");
+        btns();
+        exit();
+    } else {
+        informaErro("Erro ao deletar dados :( ");
+    }
+}
+
+
+$query = "SELECT * FROM  dadosCpf where id= {$_GET['id']}";
+$resultado = $conexao->query($query);
 
 ?>
 
@@ -98,6 +98,6 @@
 
 <?php
 
-    require_once "../rodape.php";
+require_once "./rodape.php";
 
 ?>
