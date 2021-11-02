@@ -1,26 +1,27 @@
 <?php
 
-require_once "../cabecalho.php";
-require_once "../funcoes.php";
+    require_once "../cabecalho.php";
+    require_once "../funcoes.php";
 
-$flag = 1;
+    $flag = 1;
 
-$atividade_principal = [];
-$atividades_secundarias = [];
+    $atividade_principal = [];
+    $atividades_secundarias = [];
 
-if (isset($_GET['submit'])) {
-    require_once "apiCNPJ.php";
-} elseif (isset($_GET['id'])) {
-    require_once "seleciona_dadosCNPJ.php";
-}
+    if (isset($_GET['submit'])) {
+        require_once "apiCNPJ.php";
+    } elseif (isset($_GET['id'])) {
+        require_once "seleciona_dadosCNPJ.php";
+    }
 
-if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
-    require_once "tratativaCNPJ.php";
-}
+    if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
+        require_once "tratativaCNPJ.php";
+    }
 
 ?>
 
 <h1>BUSCA CNPJ</h1>
+
 <form action="" method="get">
 
     <div class="form-row d-flex align-items-end">
@@ -191,6 +192,6 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
 
 <?php
 
-require_once "../rodape.php";
+    require_once "../rodape.php";
 
 ?>
