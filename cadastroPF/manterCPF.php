@@ -1,13 +1,13 @@
 <?php
 
-    require_once "../cabecalho.php";
-    require_once "../funcoes.php";
+require_once "./cabecalho.php";
+require_once "./funcoes.php";
 
-    $flag = 1;
+$flag = 1;
 
-    if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
-        require_once "tratativaCPF.php";
-    }
+if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
+    require_once "tratativaCPF.php";
+}
 
 ?>
 
@@ -103,6 +103,6 @@
 
 <?php
 
-    require_once "../rodape.php";
+require_once "./rodape.php";
 
 ?>

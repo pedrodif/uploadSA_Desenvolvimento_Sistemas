@@ -1,12 +1,12 @@
 <?php
 
-    session_start();
-    include "../conexao.php";
-    require_once "../cabecalho.php";
+session_start();
+include "./conexao.php";
+require_once "./cabecalho.php";
 
 
-    $query = "SELECT * FROM  dadosCnpj ";
-    $resultado = $conexao->query($query);
+$query = "SELECT * FROM  dadosCpf ";
+$resultado = $conexao->query($query);
 
 ?>
 
@@ -59,7 +59,7 @@
                     <td><?= $value['municipio'] ?></td>
                     <td><?= $value['uf'] ?></td>
                     <td><?= date("j/m/Y H:i:s", strtotime($value['dtCriacao'])) ?></td>
-                    <td><a href="../index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
+                    <td><a href="./index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
                     <td><a href="deleteCPF.php?id=<?= $value['id'] ?>" class="btn btn-danger text-center">Deletar</a></td>
                 </tr>
 
@@ -83,6 +83,6 @@
 
 <?php
 
-    require_once "../rodape.php";
+require_once "./rodape.php";
 
 ?>

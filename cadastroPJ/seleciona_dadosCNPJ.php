@@ -1,6 +1,6 @@
-<?php 
-    
-    include "../conexao.php";
+<?php
+
+    include "./conexao.php";
 
     $flag = 0;
 
@@ -14,6 +14,7 @@
                 $$key = $elemento;
             }
         }
+
     }
 
 ?>
