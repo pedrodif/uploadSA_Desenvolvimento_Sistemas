@@ -5,7 +5,7 @@ if (isset($_GET['id']))
 else
     $flag = 1;
 
-require_once "../conexao.php";
+require_once "./conexao.php";
 
 
 $array_erro = [];
@@ -100,7 +100,7 @@ if (count($array_erro) > 0) {
         );
         $conexao->close();
 
-        require_once "../rodape.php";
+        require_once "./rodape.php";
         exit();
     } else {
         informaErro('Não foi possível realizar a operação: ' . $conexao->error);

@@ -1,8 +1,8 @@
 <?php
 
 session_start();
-include "../conexao.php";
-require_once "../cabecalho.php";
+include "./conexao.php";
+require_once "./cabecalho.php";
 
 
 $query = "SELECT * FROM  dadosCnpj ";
@@ -71,7 +71,7 @@ $resultado = $conexao->query($query);
                     <td><?= $value['situacao'] ?></td>
                     <td><?= date("j/m/Y", strtotime($value['dtSituacao'])) ?></td>
                     <td><?= date("j/m/Y H:i:s", strtotime($value['dtCriacao'])) ?></td>
-                    <td><a href="../index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
+                    <td><a href="./index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
                     <td><a href="deleteCNPJ.php?id=<?= $value['id'] ?>" class="btn btn-danger text-center">Deletar</a></td>
                 </tr>
 
@@ -95,6 +95,6 @@ $resultado = $conexao->query($query);
 
 <?php
 
-require_once "../rodape.php";
+require_once "./rodape.php";
 
 ?>

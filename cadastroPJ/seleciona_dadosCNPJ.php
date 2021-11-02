@@ -1,17 +1,17 @@
-<?php 
-    
-    include "../conexao.php";
+<?php
 
-    $flag = 0;
+include "./conexao.php";
 
-    $query = "SELECT * FROM dadosCnpj WHERE id = {$_GET['id']}";
+$flag = 0;
 
-    $resultado = $conexao->query($query);
+$query = "SELECT * FROM dadosCnpj WHERE id = {$_GET['id']}";
 
-    if ($resultado->num_rows > 0) {
-        foreach ($resultado as $linha) {
-            foreach ($linha as $key => $elemento) {
-                $$key = $elemento;
-            }
+$resultado = $conexao->query($query);
+
+if ($resultado->num_rows > 0) {
+    foreach ($resultado as $linha) {
+        foreach ($linha as $key => $elemento) {
+            $$key = $elemento;
         }
     }
+}
