@@ -1,12 +1,12 @@
 <?php
 
-session_start();
-include "./conexao.php";
-require_once "./cabecalho.php";
+    session_start();
+    include "./conexao.php";
+    require_once "./cabecalho.php";
 
 
-$query = "SELECT * FROM  dadosCnpj ";
-$resultado = $conexao->query($query);
+    $query = "SELECT * FROM  dadosCnpj ";
+    $resultado = $conexao->query($query);
 
 ?>
 
@@ -95,6 +95,6 @@ $resultado = $conexao->query($query);
 
 <?php
 
-require_once "./rodape.php";
+    require_once "./rodape.php";
 
 ?>

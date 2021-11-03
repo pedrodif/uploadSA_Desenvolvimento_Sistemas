@@ -1,8 +1,8 @@
 <?php
 
-require_once "./cabecalho.php";
-include "./conexao.php";
-require_once "./funcoes.php";
+    require_once "./cabecalho.php";
+    include "./conexao.php";
+    require_once "./funcoes.php";
 
 
 if (isset($_POST['submit'])) {
@@ -18,8 +18,8 @@ if (isset($_POST['submit'])) {
 }
 
 
-$query = "SELECT * FROM  dadosCnpj where id= {$_GET['id']}";
-$resultado = $conexao->query($query);
+    $query = "SELECT * FROM  dadosCnpj where id= {$_GET['id']}";
+    $resultado = $conexao->query($query);
 
 ?>
 
@@ -110,6 +110,6 @@ $resultado = $conexao->query($query);
 
 <?php
 
-require_once "./rodape.php";
+    require_once "./rodape.php";
 
 ?>

@@ -71,7 +71,7 @@
                 '$abertura', '$nome', '$fantasia ', '$natureza_juridica', '$atividade_principal', '$atividades_secundarias',
                 '$cep', '$logradouro', '$numero', '$complemento', '$bairro', '$municipio',
                 '$uf', '$email', '$telefone', '$situacao', '$data_situacao',  NOW())";
-        }
+            }
 
         $resultado = $conexao->query($query);
         if ($resultado) {

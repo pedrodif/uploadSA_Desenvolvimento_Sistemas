@@ -1,26 +1,27 @@
 <?php
 
-require_once "./cabecalho.php";
-require_once "./funcoes.php";
+    require_once "./cabecalho.php";
+    require_once "./funcoes.php";
 
-$flag = 1;
+    $flag = 1;
 
-$atividade_principal = [];
-$atividades_secundarias = [];
+    $atividade_principal = [];
+    $atividades_secundarias = [];
 
-if (isset($_GET['submit'])) {
-    require_once "apiCNPJ.php";
-} elseif (isset($_GET['id'])) {
-    require_once "seleciona_dadosCNPJ.php";
-}
+    if (isset($_GET['submit'])) {
+        require_once "apiCNPJ.php";
+    } elseif (isset($_GET['id'])) {
+        require_once "seleciona_dadosCNPJ.php";
+    }
 
-if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
-    require_once "tratativaCNPJ.php";
-}
+    if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
+        require_once "tratativaCNPJ.php";
+    }
 
 ?>
 
-<h1>BUSCA CNPJ</h1>
+
+<h3>BUSCA CNPJ</h3>
 
 <form action="" method="get">
 
@@ -43,25 +44,30 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
 
 <form action="#" method="post">
 
+
+    <h5>Dados Cadastrais</h5>
+    <br>
+
+
     <div class="form-row">
 
         <div class="form-group col-md-2">
-            <label>NÚMERO DE INSCRIÇÃO</label>
+            <label>Número de inscrição</label>
             <input type="text" class="form-control" name="cnpj" value="<?= isset($cnpj) ? $cnpj : ''; ?>">
         </div>
 
         <div class="form-group col-md-2">
-            <label>MATRIZ/FILIAL</label>
+            <label>Matriz/Filial</label>
             <input type="text" class="form-control" name="tipo" value="<?= isset($tipo) ? $tipo : ''; ?>">
         </div>
 
         <div class="form-group col-md-2">
-            <label>DATA DE ABERTURA</label>
+            <label>Data de abertura</label>
             <input type="text" class="form-control" name="abertura" value="<?= isset($abertura) ? $abertura : ''; ?>">
         </div>
 
         <div class="form-group col-md-6">
-            <label>NOME EMPRESARIAL</label>
+            <label>Nome empresarial</label>
             <input type="text" class="form-control" name="nome" value="<?= isset($nome) ? $nome : ''; ?>">
         </div>
 
@@ -70,12 +76,12 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
     <div class="form-row">
 
         <div class="form-group col-md-6">
-            <label>TÍTULO DO ESTABELECIMENTO (NOME DE FANTASIA)</label>
+            <label>Nome fantasia</label>
             <input type="text" class="form-control" name="fantasia" value="<?= isset($fantasia) ? $fantasia : ''; ?>">
         </div>
 
         <div class="form-group col-md-6">
-            <label>CÓDIGO E DESCRIÇÃO DA NATUREZA JURÍDICA</label>
+            <label>Código e Descrição da Natureza Jurídica</label>
             <input type="text" class="form-control" name="naturezaJuridica" value="<?= isset($natureza_juridica) ? $natureza_juridica : ''; ?>">
         </div>
 
@@ -85,14 +91,14 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
     <div class="form-row">
 
         <div class="form-group col-md-6">
-            <label>CÓDIGO E DESCRIÇÃO DA ATIVIDADE ECONÔMICA PRINCIPAL</label>
+            <label>Código-Descrição da atividade econômica principal</label>
             <?php foreach ($atividade_principal as $value) { ?>
                 <input type="text" class="form-control" name="atvPrincipal" value="<?= $value->code . '-' . $value->text ?>">
             <?php } ?>
         </div>
 
         <div class="form-group col-md-6">
-            <label>CÓDIGO E DESCRIÇÃO DAS ATIVIDADES ECONÔMICAS SECUNDÁRIAS</label>
+            <label>Código-Descrição das atividades econômicas secundárias</label>
             <?php foreach ($atividades_secundarias as $value) { ?>
                 <input type="text" class="form-control" name="atvSecundaria" value="<?= $value->code . '-' . $value->text ?>">
             <?php } ?>
@@ -100,27 +106,29 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
 
     </div>
 
+    <br>
+        <h5>Endereço</h5>
+    <br>
 
-    <h5>ENDEREÇO</h5>
     <div class="form-row">
 
         <div class="form-group col-md-2">
-            <label>CEP</label>
+            <label>Cep</label>
             <input type="text" class="form-control" name="cep" value="<?= isset($cep) ? $cep : ''; ?>">
         </div>
 
         <div class="form-group col-md-6">
-            <label>LOGRADOURO</label>
+            <label>Logradouro</label>
             <input type="text" class="form-control" name="logradouro" value="<?= isset($logradouro) ? $logradouro : ''; ?>">
         </div>
 
         <div class="form-group col-md-2">
-            <label>NÚMERO</label>
+            <label>Número</label>
             <input type="text" class="form-control" name="numero" value="<?= isset($numero) ? $numero : ''; ?>">
         </div>
 
         <div class="form-group col-md-2">
-            <label>COMPLEMENTO</label>
+            <label>Complemento</label>
             <input type="text" class="form-control" name="complemento" value="<?= isset($complemento) ? $complemento : ''; ?>">
         </div>
 
@@ -130,32 +138,37 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
     <div class="form-row">
 
         <div class="form-group col-md-3">
-            <label>BAIRRO/DISTRITO</label>
+            <label>Bairro/Distrito</label>
             <input type="text" class="form-control" name="bairro" value="<?= isset($bairro) ? $bairro : ''; ?>">
         </div>
 
         <div class="form-group col-md-3">
-            <label>MUNICÍPIO</label>
+            <label>Município</label>
             <input type="text" class="form-control" name="municipio" value="<?= isset($municipio) ? $municipio : ''; ?>">
         </div>
 
         <div class="form-group col-md-1">
-            <label>UF</label>
+            <label>Uf</label>
             <input type="text" class="form-control" name="uf" value="<?= isset($uf) ? $uf : ''; ?>">
         </div>
 
     </div>
 
 
+    <br>
+        <h5>Contato</h5>
+    <br>
+
+
     <div class="form-row">
 
         <div class="form-group col-md-6">
-            <label>ENDEREÇO ELETRÔNICO</label>
+            <label>Email</label>
             <input type="email" class="form-control" name="email" value="<?= isset($email) ? $email : ''; ?>">
         </div>
 
         <div class="form-group col-md-6">
-            <label>TELEFONE</label>
+            <label>Telefone</label>
             <input type="text" class="form-control" name="telefone" value="<?= isset($telefone) ? $telefone : ''; ?>">
         </div>
 
@@ -165,15 +178,17 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
     <div class="form-row">
 
         <div class="form-group col-md-3">
-            <label>SITUAÇÃO CADASTRAL</label>
+            <label>Situação Cadastral</label>
             <input type="text" class="form-control" name="situacao" value="<?= isset($situacao) ? $situacao : ''; ?>">
         </div>
 
         <div class="form-group col-md-3">
-            <label>DATA DA SITUAÇÃO CADASTRAL</label>
+            <label>Data Cadastro</label>
             <input type="text" class="form-control" name="dtSituacao" value="<?= isset($data_situacao) ? $data_situacao : ''; ?>">
         </div>
     </div>
+
+    <br>
 
     <div class="form-row">
         <div class="form-group" col-md-1>
@@ -183,15 +198,17 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
             <?php else : ?>
                 <input type="submit" name="alterar" class="btn btn-success text-center" value="Alterar">
             <?php endif ?>
-            <a href="lista_dadosCNPJ.php" class="btn btn-dark text-center">Ver Dados</a>
+            <a href="cadastroPJ/lista_dadosCNPJ.php" class="btn btn-secondary text-center">Ver Dados</a>
 
         </div>
     </div>
 
 </form>
 
+
+
 <?php
 
-require_once "./rodape.php";
+    require_once "./rodape.php";
 
 ?>
