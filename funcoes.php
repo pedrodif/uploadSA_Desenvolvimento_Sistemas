@@ -28,6 +28,17 @@
           <a href="index.php" class="btn btn-success text-center ml-3">Cadastrar</a>
         </div>';
     
-      }
+    }
+
+
+    function campoEmBranco($campo){
+        if (isset($campo)) {
+            if (empty($campo))
+                return 'is-invalid';
+            else
+                return $campo;
+        } else
+            return '';
+    }
 
 ?>
