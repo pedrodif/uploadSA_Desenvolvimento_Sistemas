@@ -1,8 +1,8 @@
 <?php
 
     session_start();
-    include "./conexao.php";
-    require_once "./cabecalho.php";
+    include "../conexao.php";
+    require_once "../cabecalho.php";
 
 
     $query = "SELECT * FROM  dadosCnpj ";
@@ -53,10 +53,10 @@
                     <th scope="row"><?= $value['id'] ?></th>
                     <td><?= $value['cnpj'] ?></td>
                     <td><?= $value['tipo'] ?></td>
-                    <td><?= date("j/m/Y", strtotime($value['abertura'])) ?></td>
+                    <td><?= $value['abertura'] ?></td>
                     <td><?= $value['nome'] ?></td>
                     <td><?= $value['fantasia'] ?></td>
-                    <td><?= $value['naturezaJuridica'] ?></td>
+                    <td><?= $value['natureza_juridica'] ?></td>
                     <td><?= $value['atvPrincipal'] ?></td>
                     <td><?= $value['atvSecundaria'] ?></td>
                     <td><?= $value['cep'] ?></td>
@@ -69,9 +69,9 @@
                     <td><?= $value['email'] ?></td>
                     <td><?= $value['telefone'] ?></td>
                     <td><?= $value['situacao'] ?></td>
-                    <td><?= date("j/m/Y", strtotime($value['dtSituacao'])) ?></td>
+                    <td><?= $value['data_situacao']?></td>
                     <td><?= date("j/m/Y H:i:s", strtotime($value['dtCriacao'])) ?></td>
-                    <td><a href="./index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
+                    <td><a href="../index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
                     <td><a href="deleteCNPJ.php?id=<?= $value['id'] ?>" class="btn btn-danger text-center">Deletar</a></td>
                 </tr>
 
@@ -87,7 +87,7 @@
 
     <div class="form-group" col-md-1>
 
-        <a href="index.php" class="btn btn-primary text-center">Voltar</a>
+        <a href="../index.php" class="btn btn-primary text-center">Voltar</a>
 
     </div>
 
@@ -95,6 +95,6 @@
 
 <?php
 
-    require_once "./rodape.php";
+    require_once "../rodape.php";
 
 ?>

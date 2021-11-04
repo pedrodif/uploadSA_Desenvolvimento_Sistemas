@@ -5,7 +5,7 @@
     else
         $flag = 1;
 
-    require_once "../conexao.php";
+    include "./conexao.php";
 
 
     $array_erro = [];
@@ -100,7 +100,8 @@
             );
             $conexao->close();
 
-            require_once "../rodape.php";
+            require_once "./rodape.php";
+            btns('cadastroPJ/lista_dadosCNPJ', '../index');
             exit();
         } else {
             informaErro('Não foi possível realizar a operação: ' . $conexao->error);

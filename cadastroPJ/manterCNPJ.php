@@ -5,9 +5,6 @@
 
     $flag = 1;
 
-    $atividade_principal = [];
-    $atividades_secundarias = [];
-
     if (isset($_GET['submit'])) {
         require_once "apiCNPJ.php";
     } elseif (isset($_GET['id'])) {
@@ -77,11 +74,11 @@
 
         <div class="form-group col-md-6">
             <label>Nome fantasia</label>
-            <input type="text" class="form-control" name="fantasia" value="<?= isset($fantasia) ? $fantasia : ''; ?>">
+            <input type="text" class="form-control" name="fantasia" value="<?= isset($fantasia) ? (empty($fantasia)? '-': $fantasia) : ''; ?>">
         </div>
 
         <div class="form-group col-md-6">
-            <label>Código e Descrição da Natureza Jurídica</label>
+            <label>Código-Descrição da Natureza Jurídica</label>
             <input type="text" class="form-control" name="naturezaJuridica" value="<?= isset($natureza_juridica) ? $natureza_juridica : ''; ?>">
         </div>
 
@@ -92,16 +89,22 @@
 
         <div class="form-group col-md-6">
             <label>Código-Descrição da atividade econômica principal</label>
-            <?php foreach ($atividade_principal as $value) { ?>
+            <?php if(isset($atividade_principal)){
+                foreach ((object)$atividade_principal as $value) { ?>
                 <input type="text" class="form-control" name="atvPrincipal" value="<?= $value->code . '-' . $value->text ?>">
-            <?php } ?>
+            <?php }}else{ ?>
+                <input type="text" class="form-control" name="atvPrincipal" value="">
+                <?php } ?>
         </div>
 
         <div class="form-group col-md-6">
             <label>Código-Descrição das atividades econômicas secundárias</label>
-            <?php foreach ($atividades_secundarias as $value) { ?>
+            <?php if(isset($atividades_secundarias)){
+                foreach ((object)$atividades_secundarias as $value) { ?>
                 <input type="text" class="form-control" name="atvSecundaria" value="<?= $value->code . '-' . $value->text ?>">
-            <?php } ?>
+            <?php }}else{ ?>
+                <input type="text" class="form-control" name="atvPrincipal" value="">
+                <?php } ?>
         </div>
 
     </div>
@@ -129,7 +132,7 @@
 
         <div class="form-group col-md-2">
             <label>Complemento</label>
-            <input type="text" class="form-control" name="complemento" value="<?= isset($complemento) ? $complemento : ''; ?>">
+            <input type="text" class="form-control" name="complemento" value="<?= isset($complemento) ? (empty($complemento)? '-': $complemento)  : '-'; ?>">
         </div>
 
     </div>
@@ -198,7 +201,7 @@
             <?php else : ?>
                 <input type="submit" name="alterar" class="btn btn-success text-center" value="Alterar">
             <?php endif ?>
-            <a href="cadastroPJ/lista_dadosCNPJ.php" class="btn btn-secondary text-center">Ver Dados</a>
+            <a href="cadastroPJ/lista_dadosCNPJ.php" class="btn btn-warning text-white text-center">Ver Dados</a>
 
         </div>
     </div>

@@ -1,8 +1,8 @@
 <?php
 
-    require_once "./cabecalho.php";
-    include "./conexao.php";
-    require_once "./funcoes.php";
+    require_once "../cabecalho.php";
+    include "../conexao.php";
+    require_once "../funcoes.php";
 
 
 if (isset($_POST['submit'])) {
@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
     $resultado = $conexao->query($query);
     if ($resultado) {
         informaSucesso("Dados deletados com sucesso!");
-        btns();
+        btns('lista_dadosCNPJ', '../index');
         exit();
     } else {
         informaErro("Erro ao deletar dados :( ");
@@ -63,10 +63,10 @@ if (isset($_POST['submit'])) {
                 <th scope="row"><?= $value['id'] ?></th>
                 <td><?= $value['cnpj'] ?></td>
                 <td><?= $value['tipo'] ?></td>
-                <td><?= date("j/m/Y", strtotime($value['abertura'])) ?></td>
+                <td><?= $value['abertura'] ?></td>
                 <td><?= $value['nome'] ?></td>
                 <td><?= $value['fantasia'] ?></td>
-                <td><?= $value['naturezaJuridica'] ?></td>
+                <td><?= $value['natureza_juridica'] ?></td>
                 <td><?= $value['atvPrincipal'] ?></td>
                 <td><?= $value['atvSecundaria'] ?></td>
                 <td><?= $value['cep'] ?></td>
@@ -79,7 +79,7 @@ if (isset($_POST['submit'])) {
                 <td><?= $value['email'] ?></td>
                 <td><?= $value['telefone'] ?></td>
                 <td><?= $value['situacao'] ?></td>
-                <td><?= date("j/m/Y", strtotime($value['dtSituacao'])) ?></td>
+                <td><?= $value['data_situacao']?></td>
                 <td><?= date("j/m/Y H:i:s", strtotime($value['dtCriacao'])) ?></td>
             </tr>
 
@@ -110,6 +110,6 @@ if (isset($_POST['submit'])) {
 
 <?php
 
-    require_once "./rodape.php";
+    require_once "../rodape.php";
 
 ?>

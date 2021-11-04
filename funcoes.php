@@ -21,11 +21,11 @@
         echo '</div>';
     }
 
-    function btns(){
+    function btns($path_dados, $path_index){
     
         echo '<div class="row justify-content-center">
-          <a href="lista_dadosCNPJ.php" class="btn btn-primary text-center ml-3">Ver Dados</a>
-          <a href="index.php" class="btn btn-success text-center ml-3">Cadastrar</a>
+          <a href="'.$path_dados.'.php" class="btn btn-primary text-center ml-3">Ver Dados</a>
+          <a href="'.$path_index.'.php" class="btn btn-success text-center ml-3">Cadastrar</a>
         </div>';
     
     }
