@@ -22,9 +22,9 @@
 
     empty($_POST['naturezaJuridica']) ? $array_erro['naturezaJuridica'] = "Campo natureza jurídica não preenchido" : $natureza_juridica = trim($_POST['naturezaJuridica']);
 
-    empty($_POST['atvPrincipal']) ? $array_erro['atvPrincipal'] = "Campo atividade principal não preenchido" : $atividade_principal = trim($_POST['atvPrincipal']);
+    empty($_POST['atividade_principal']) ? $array_erro['atividade_principal'] = "Campo atividade principal não preenchido" : $atividade_principal = trim($_POST['atividade_principal']);
 
-    empty($_POST['atvSecundaria']) ? $array_erro['atvSecundaria'] = "Campo atividade secundária não preenchido" : $atividades_secundarias = trim($_POST['atvSecundaria']);
+    empty($_POST['atividades_secundarias']) ? $array_erro['atividades_secundarias'] = "Campo atividade secundária não preenchido" : $atividades_secundarias = trim($_POST['atividades_secundarias']);
 
     empty($_POST['cep']) ? $array_erro['cep'] = "Campo CEP não preenchido" : $cep = trim($_POST['cep']);
 

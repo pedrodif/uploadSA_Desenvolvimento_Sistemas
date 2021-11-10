@@ -2,7 +2,7 @@
 
     session_start();
     include "../conexao.php";
-    include "../cabecalho.php";
+    require_once "../cabecalho.php";
 
 
     $query = "SELECT * FROM  dadosCnpj ";

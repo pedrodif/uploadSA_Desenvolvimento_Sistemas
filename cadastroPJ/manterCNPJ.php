@@ -91,9 +91,9 @@
             <label>Código-Descrição da atividade econômica principal</label>
             <?php if(isset($atividade_principal)){
                 foreach ((object)$atividade_principal as $value) { ?>
-                <input type="text" class="form-control" name="atvPrincipal" value="<?= $value->code . '-' . $value->text ?>">
+                <input type="text" class="form-control" name="atividade_principal" value="<?= $value->code . '-' . $value->text ?>">
             <?php }}else{ ?>
-                <input type="text" class="form-control" name="atvPrincipal" value="">
+                <input type="text" class="form-control" name="atividade_principal" value="">
                 <?php } ?>
         </div>
 
@@ -101,9 +101,9 @@
             <label>Código-Descrição das atividades econômicas secundárias</label>
             <?php if(isset($atividades_secundarias)){
                 foreach ((object)$atividades_secundarias as $value) { ?>
-                <input type="text" class="form-control" name="atvSecundaria" value="<?= $value->code . '-' . $value->text ?>">
+                <input type="text" class="form-control" name="atividades_secundarias" value="<?= $value->code . '-' . $value->text ?>">
             <?php }}else{ ?>
-                <input type="text" class="form-control" name="atvPrincipal" value="">
+                <input type="text" class="form-control" name="atividades_secundarias" value="">
                 <?php } ?>
         </div>
 
