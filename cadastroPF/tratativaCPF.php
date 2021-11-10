@@ -16,7 +16,7 @@ empty($_POST['email']) ? $array_erro['email'] = "Campo email não preenchido" : 
 
 empty($_POST['cpf']) ? $array_erro['cpf'] = "Campo cpf não preenchido" : $cpf = trim($_POST['cpf']);
 
-empty($_POST['dtNascimento']) ? $array_erro['dtNascimento'] = "Campo data de nascimento não preenchido" : $dtNascimento = trim($_POST['dtNascimento']);
+empty($_POST['dtnascimento']) ? $array_erro['dtnascimento'] = "Campo data de nascimento não preenchido" : $dtnascimento = trim($_POST['dtnascimento']);
 
 empty($_POST['celular']) ? $array_erro['celular'] = "Campo celular não preenchido" : $celular = trim($_POST['celular']);
 
@@ -28,7 +28,7 @@ empty($_POST['logradouro']) ? $array_erro['logradouro'] = "Campo logradouro não
 
 empty($_POST['numero']) ? $array_erro['numero'] = "Campo número não preenchido" : $numero = trim($_POST['numero']);
 
-empty($_POST['complemento']) ? $array_erro['complemento'] = "Campo complemento não preenchido" : $complemento = trim($_POST['complemento']);
+$complemento = trim($_POST['complemento']);
 
 empty($_POST['bairro']) ? $array_erro['bairro'] = "Campo bairro não preenchido" : $bairro = trim($_POST['bairro']);
 
@@ -49,14 +49,15 @@ if (count($array_erro) > 0) {
     if (!$flag) {
 
         //alterar os campos para o update 
-        $query = "UPDATE dadosCpf SET cpf = '$cpf',
-                nome = '$nome', dtNascimento = '$dtNascimento', email = '$email ', celular = '$celular', sexo = '$sexo',
-                cep = '$cep', logradouro = '$logradouro', 	numero = '$numero', complemento = '$complemento', bairro = '$bairro', municipio = '$municipio',
-                uf = '$uf', 
-                WHERE id = {$_POST['id']}";
+        $query = "UPDATE dadoscpf SET cpf = '$cpf',
+                nome = '$nome', dtnascimento = '$dtnascimento', email = '$email ', celular = '$celular',
+                sexo = '$sexo', cep = '$cep', logradouro = '$logradouro', numero = '$numero',
+                complemento = '$complemento', bairro = '$bairro', municipio = '$municipio',
+                uf = '$uf' 
+                WHERE id = {$_GET['id']}";
     } else {
-        $query = "INSERT INTO dadosCpf values(NULL, '$cpf',
-                '$nome ', '$dtNascimento' , '$email ', '$celular ', $sexo,
+        $query = "INSERT INTO dadoscpf values(NULL, '$cpf',
+                '$nome ', '$dtnascimento' , '$email ', '$celular ', '$sexo',
                 '$cep', '$logradouro', '$numero', '$complemento', '$bairro', '$municipio',
                 '$uf',  NOW())";
     }
@@ -82,6 +83,7 @@ if (count($array_erro) > 0) {
         );
         $conexao->close();
         require_once "./rodape.php";
+        btns('cadastroPF/lista_dadosCPF', './index');
         exit();
     } else {
         informaErro('Não foi possível realizar a operação: ' . $conexao->error);

@@ -1,11 +1,11 @@
 <?php
 
 session_start();
-include "./conexao.php";
-require_once "./cabecalho.php";
+include "../conexao.php";
+require_once "../cabecalho.php";
 
 
-$query = "SELECT * FROM  dadosCpf ";
+$query = "SELECT * FROM  dadoscpf ";
 $resultado = $conexao->query($query);
 
 ?>
@@ -58,8 +58,8 @@ $resultado = $conexao->query($query);
                     <td><?= $value['bairro'] ?></td>
                     <td><?= $value['municipio'] ?></td>
                     <td><?= $value['uf'] ?></td>
-                    <td><?= date("j/m/Y H:i:s", strtotime($value['dtCriacao'])) ?></td>
-                    <td><a href="./index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
+                    <td><?= date("j/m/Y H:i:s", strtotime($value['dtcriacao'])) ?></td>
+                    <td><a href="../index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
                     <td><a href="deleteCPF.php?id=<?= $value['id'] ?>" class="btn btn-danger text-center">Deletar</a></td>
                 </tr>
 
@@ -75,7 +75,7 @@ $resultado = $conexao->query($query);
 
     <div class="form-group" col-md-1>
 
-        <a href="index.php" class="btn btn-primary text-center">Voltar</a>
+        <a href="../index.php" class="btn btn-primary text-center">Voltar</a>
 
     </div>
 
@@ -83,6 +83,6 @@ $resultado = $conexao->query($query);
 
 <?php
 
-require_once "./rodape.php";
+require_once "../rodape.php";
 
 ?>
