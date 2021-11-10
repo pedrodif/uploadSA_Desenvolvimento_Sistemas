@@ -1,16 +1,16 @@
 <?php
 
-require_once "./cabecalho.php";
-include "./conexao.php";
-require_once "./funcoes.php";
+require_once "../cabecalho.php";
+include "../conexao.php";
+require_once "../funcoes.php";
 
 
 if (isset($_POST['submit'])) {
-    $query = "DELETE FROM  dadosCpf WHERE id={$_POST['id']}";
+    $query = "DELETE FROM  dadoscpf WHERE id={$_POST['id']}";
     $resultado = $conexao->query($query);
     if ($resultado) {
         informaSucesso("Dados deletados com sucesso!");
-        btns();
+        btns('lista_dadosCPF', '../index');
         exit();
     } else {
         informaErro("Erro ao deletar dados :( ");
@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
 }
 
 
-$query = "SELECT * FROM  dadosCpf where id= {$_GET['id']}";
+$query = "SELECT * FROM  dadoscpf where id= {$_GET['id']}";
 $resultado = $conexao->query($query);
 
 ?>
@@ -68,7 +68,6 @@ $resultado = $conexao->query($query);
                 <td><?= $value['bairro'] ?></td>
                 <td><?= $value['municipio'] ?></td>
                 <td><?= $value['uf'] ?></td>
-                <td><?= date("j/m/Y H:i:s", strtotime($value['dtCriacao'])) ?></td>
             </tr>
 
         <?php } ?>
@@ -87,7 +86,7 @@ $resultado = $conexao->query($query);
 
             <input type="submit" name="submit" class="btn btn-danger text-center" value="Deletar">
 
-            <a href="lista_dadosCPF.php" class="btn btn-primary text-center">Voltar</a>
+            <a href="lista_dadoscpf.php" class="btn btn-primary text-center">Voltar</a>
 
         </div>
 
@@ -98,6 +97,6 @@ $resultado = $conexao->query($query);
 
 <?php
 
-require_once "./rodape.php";
+require_once "../rodape.php";
 
 ?>

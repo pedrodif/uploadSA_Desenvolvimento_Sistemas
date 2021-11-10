@@ -4,7 +4,7 @@ include "./conexao.php";
 
 $flag = 0;
 
-$query = "SELECT * FROM dadosCpf WHERE id = {$_GET['id']}";
+$query = "SELECT * FROM dadoscpf WHERE id = {$_GET['id']}";
 
 $resultado = $conexao->query($query);
 
