@@ -14,9 +14,14 @@
     <body>
         <header class="bg-secondary text-white text-center sticky-top">
 
+            
             <img src="imgs/icon_logo.png" alt="logo" class="logo">
             
             <h1>Cadastros e Consultas</h1>
+
+            <div>
+                <a href="logout.php" class="btn btn-outline-light ml-3">Sair</a>
+            </div>
 
         </header>
 

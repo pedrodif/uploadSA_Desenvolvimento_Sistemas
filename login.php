@@ -29,8 +29,7 @@
 
         <div class="form-group justify-content-center">
             <label for="senha">Senha</label>
-            <input type="password" name="senha" class="form-control <?= campoEmBranco($_SESSION['senha']) ?>" id="senha" value="">
-            
+            <input type="password" name="senha" class="form-control <?= isset($_SESSION['senha'])? campoEmBranco($_SESSION['senha']) : '' ?>" id="senha" value="">
         </div>
 
         <div class="form-group justify-content-center">
