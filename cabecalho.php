@@ -20,7 +20,7 @@
             <h1>Cadastros e Consultas</h1>
 
             <div>
-                <a href="logout.php" class="btn btn-outline-light ml-3">Sair</a>
+            <em class=""><?= $_SESSION['nome'] ?><a href="logout.php" class="btn btn-outline-light ml-3">Sair</a></em>
             </div>
 
         </header>

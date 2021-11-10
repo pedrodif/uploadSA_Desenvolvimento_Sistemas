@@ -20,8 +20,6 @@
         
         </div>
 
-        <br>
-
         <div class="form-row">
 
             <div class="form-group col-md-8">
