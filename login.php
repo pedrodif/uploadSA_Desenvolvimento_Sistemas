@@ -24,19 +24,24 @@
 
         <div class="form-group justify-content-center">
             <label for="email">E-mail</label>
-            <input type="text" class="form-control <?= campoEmBranco($_SESSION['email']) ?>" name="email" id="email" value="<?= isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>">
+            <input type="text" class="form-control <?= isset($_SESSION['email'])? campoEmBranco($_SESSION['email']) : '' ?>" name="email" id="email" value="<?= isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>">
         </div>
 
         <div class="form-group justify-content-center">
             <label for="senha">Senha</label>
             <input type="password" name="senha" class="form-control <?= campoEmBranco($_SESSION['senha']) ?>" id="senha" value="">
-            <!-- é necessário manter o value aqui?  -->
+            
         </div>
 
         <div class="form-group justify-content-center">
-            <input type="submit" name="submit_login" value="Entrar" class="btn btn-primary">
+            <input type="submit" name="submit_login" value="ENTRAR" class="btn btn-primary">
+            <a href="cadastro_usuario.php" class="btn btn-warning text-white">CADASTRAR USUÁRIO</a>
         </div>
-        </form>
+
+        <div class="form-group justify-content-center">
+           
+        </div>
+
 
     </main>
 

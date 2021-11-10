@@ -2,7 +2,7 @@
 
     session_start();
     include "../conexao.php";
-    require_once "../cabecalho.php";
+    include "../cabecalho.php";
 
 
     $query = "SELECT * FROM  dadosCnpj ";
@@ -71,8 +71,8 @@
                     <td><?= $value['situacao'] ?></td>
                     <td><?= $value['data_situacao']?></td>
                     <td><?= date("j/m/Y H:i:s", strtotime($value['dtCriacao'])) ?></td>
-                    <td><a href="../index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
-                    <td><a href="deleteCNPJ.php?id=<?= $value['id'] ?>" class="btn btn-danger text-center">Deletar</a></td>
+                    <td><a href="../index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">EDITAR</a></td>
+                    <td><a href="deleteCNPJ.php?id=<?= $value['id'] ?>" class="btn btn-danger text-center">DELETAR</a></td>
                 </tr>
 
             <?php } ?>
@@ -87,7 +87,7 @@
 
     <div class="form-group" col-md-1>
 
-        <a href="../index.php" class="btn btn-primary text-center">Voltar</a>
+        <a href="../index.php" class="btn btn-primary text-center">VOLTAR</a>
 
     </div>
 

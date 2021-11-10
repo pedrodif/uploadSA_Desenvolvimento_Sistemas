@@ -97,9 +97,9 @@ if (isset($_POST['submit'])) {
 
         <div class="form-group" col-md-1>
 
-            <input type="submit" name="submit" class="btn btn-danger text-center" value="Deletar">
+            <input type="submit" name="submit" class="btn btn-danger text-center" value="DELETAR">
 
-            <a href="lista_dadosCNPJ.php" class="btn btn-primary text-center">Voltar</a>
+            <a href="lista_dadosCNPJ.php" class="btn btn-primary text-center">VOLTAR</a>
 
         </div>
 

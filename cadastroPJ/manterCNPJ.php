@@ -30,7 +30,7 @@
         </div>
 
         <div class="form-group col-md-2 ">
-            <input type="submit" name="submit" value="Buscar" class="btn btn-warning text-center text-white">
+            <input type="submit" name="submit" value="BUSCAR" class="btn btn-warning text-center text-white">
         </div>
 
     </div>
@@ -116,7 +116,7 @@
     <div class="form-row">
 
         <div class="form-group col-md-2">
-            <label>Cep</label>
+            <label>CEP</label>
             <input type="text" class="form-control" name="cep" value="<?= isset($cep) ? $cep : ''; ?>">
         </div>
 
@@ -151,7 +151,7 @@
         </div>
 
         <div class="form-group col-md-1">
-            <label>Uf</label>
+            <label>UF</label>
             <input type="text" class="form-control" name="uf" value="<?= isset($uf) ? $uf : ''; ?>">
         </div>
 
@@ -197,11 +197,11 @@
         <div class="form-group" col-md-1>
 
             <?php if ($flag) : ?>
-                <input type="submit" name="cadastrar" class="btn btn-success text-center" value="Cadastrar">
+                <input type="submit" name="cadastrar" class="btn btn-success text-center" value="CADASTRAR">
             <?php else : ?>
-                <input type="submit" name="alterar" class="btn btn-success text-center" value="Alterar">
+                <input type="submit" name="alterar" class="btn btn-success text-center" value="ALTERAR">
             <?php endif ?>
-            <a href="cadastroPJ/lista_dadosCNPJ.php" class="btn btn-warning text-white text-center">Ver Dados</a>
+            <a href="cadastroPJ/lista_dadosCNPJ.php" class="btn btn-warning text-white text-center">VER DADOS</a>
 
         </div>
     </div>
