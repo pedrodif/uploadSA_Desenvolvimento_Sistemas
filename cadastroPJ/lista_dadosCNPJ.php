@@ -57,8 +57,8 @@
                     <td><?= $value['nome'] ?></td>
                     <td><?= $value['fantasia'] ?></td>
                     <td><?= $value['natureza_juridica'] ?></td>
-                    <td><?= $value['atvPrincipal'] ?></td>
-                    <td><?= $value['atvSecundaria'] ?></td>
+                    <td><?= $value['atividade_principal'] ?></td>
+                    <td><?= $value['atividade_secundaria'] ?></td>
                     <td><?= $value['cep'] ?></td>
                     <td><?= $value['logradouro'] ?></td>
                     <td><?= $value['numero'] ?></td>
