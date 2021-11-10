@@ -2,9 +2,12 @@
 
     session_start();
     require_once "funcoes.php";
-    require_once "cabecalho.php";
 
 ?>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
 
 <div class="form-row justify-content-center">
 
@@ -46,9 +49,3 @@
 
 </div>
 
-
-<?php
-
-    require_once "rodape.php";
-
-?>
