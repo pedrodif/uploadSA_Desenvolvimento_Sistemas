@@ -1,19 +1,19 @@
 <?php
 
-    require_once "./cabecalho.php";
-    require_once "./funcoes.php";
+require_once "./cabecalho.php";
+require_once "./funcoes.php";
 
-    $flag = 1;
+$flag = 1;
 
-    if (isset($_GET['submit'])) {
-        require_once "apiCNPJ.php";
-    } elseif (isset($_GET['id'])) {
-        require_once "seleciona_dadosCNPJ.php";
-    }
+if (isset($_GET['submit'])) {
+    require_once "apiCNPJ.php";
+} elseif (isset($_GET['id'])) {
+    require_once "seleciona_dadosCNPJ.php";
+}
 
-    if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
-        require_once "tratativaCNPJ.php";
-    }
+if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
+    require_once "tratativaCNPJ.php";
+}
 
 ?>
 
@@ -30,7 +30,7 @@
         </div>
 
         <div class="form-group col-md-2 ">
-            <input type="submit" name="submit" value="BUSCAR" class="btn btn-warning text-center text-white">
+            <input type="submit" name="submit" value="BUSCAR" class="btn btn-warning text-center text-white font-weight-bold">
         </div>
 
     </div>
@@ -74,7 +74,7 @@
 
         <div class="form-group col-md-6">
             <label>Nome fantasia</label>
-            <input type="text" class="form-control" name="fantasia" value="<?= isset($fantasia) ? (empty($fantasia)? '-': $fantasia) : ''; ?>">
+            <input type="text" class="form-control" name="fantasia" value="<?= isset($fantasia) ? (empty($fantasia) ? '-' : $fantasia) : ''; ?>">
         </div>
 
         <div class="form-group col-md-6">
@@ -89,28 +89,34 @@
 
         <div class="form-group col-md-6">
             <label>Código-Descrição da atividade econômica principal</label>
-            <?php if(isset($atividade_principal)){
-                foreach ((object)$atividade_principal as $value) { ?>
-                <input type="text" class="form-control" name="atividade_principal" value="<?= $value->code . '-' . $value->text ?>">
-            <?php }}else{ ?>
+            <?php if (isset($atividade_principal)) {
+                if (isset($_GET)) { ?>
+                    <input type="text" class="form-control" name="atividade_principal" value="<?= $atividade_principal ?>">
+                    <?php  } else {
+                    foreach ((object)$atividade_principal as $value) { ?>
+                        <input type="text" class="form-control" name="atividade_principal" value="<?= $value->code . '-' . $value->text ?>">
+                <?php }
+                }
+            } else { ?>
                 <input type="text" class="form-control" name="atividade_principal" value="">
-                <?php } ?>
+            <?php } ?>
         </div>
 
         <div class="form-group col-md-6">
             <label>Código-Descrição das atividades econômicas secundárias</label>
-            <?php if(isset($atividades_secundarias)){
+            <?php if (isset($atividades_secundarias)) {
                 foreach ((object)$atividades_secundarias as $value) { ?>
-                <input type="text" class="form-control" name="atividades_secundarias" value="<?= $value->code . '-' . $value->text ?>">
-            <?php }}else{ ?>
+                    <input type="text" class="form-control" name="atividades_secundarias" value="<?= $value->code . '-' . $value->text ?>">
+                <?php }
+            } else { ?>
                 <input type="text" class="form-control" name="atividades_secundarias" value="">
-                <?php } ?>
+            <?php } ?>
         </div>
 
     </div>
 
     <br>
-        <h5>Endereço</h5>
+    <h5>Endereço</h5>
     <br>
 
     <div class="form-row">
@@ -132,7 +138,7 @@
 
         <div class="form-group col-md-2">
             <label>Complemento</label>
-            <input type="text" class="form-control" name="complemento" value="<?= isset($complemento) ? (empty($complemento)? '-': $complemento)  : '-'; ?>">
+            <input type="text" class="form-control" name="complemento" value="<?= isset($complemento) ? (empty($complemento) ? '-' : $complemento)  : '-'; ?>">
         </div>
 
     </div>
@@ -159,7 +165,7 @@
 
 
     <br>
-        <h5>Contato</h5>
+    <h5>Contato</h5>
     <br>
 
 
@@ -197,11 +203,11 @@
         <div class="form-group" col-md-1>
 
             <?php if ($flag) : ?>
-                <input type="submit" name="cadastrar" class="btn btn-success text-center" value="CADASTRAR">
+                <input type="submit" name="cadastrar" class="btn btn-success text-center font-weight-bold" value="CADASTRAR">
             <?php else : ?>
-                <input type="submit" name="alterar" class="btn btn-success text-center" value="ALTERAR">
+                <input type="submit" name="alterar" class="btn btn-success text-center font-weight-bold" value="ALTERAR">
             <?php endif ?>
-            <a href="cadastroPJ/lista_dadosCNPJ.php" class="btn btn-warning text-white text-center">VER DADOS</a>
+            <a href="cadastroPJ/lista_dadosCNPJ.php" class="btn btn-warning text-white text-center font-weight-bold">VER DADOS</a>
 
         </div>
     </div>
@@ -212,6 +218,6 @@
 
 <?php
 
-    require_once "./rodape.php";
+require_once "./rodape.php";
 
 ?>

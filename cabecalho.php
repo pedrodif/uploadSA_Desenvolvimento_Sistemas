@@ -12,15 +12,18 @@
     </head>
 
     <body>
-        <header class="bg-secondary text-white text-center sticky-top">
+        <header class="bg-secondary text-white sticky-top">
 
-            
-            <img src="imgs/icon_logo.png" alt="logo" class="logo">
-            
-            <h1>Cadastros e Consultas</h1>
+            <div class="text-center">
 
-            <div>
-            <em class=""><?= isset($_SESSION['nome'])? $_SESSION['nome'] : '' ?><a href="logout.php" class="btn btn-outline-light ml-3">Sair</a></em>
+                <img src="imgs/icon_logo.png" alt="logo" class="logo">
+
+                <h1>Cadastros e Consultas</h1>
+
+            </div>
+        
+            <div class="text-md-right"> 
+                <em class=""><?= isset($_SESSION['nome'])? $_SESSION['nome'] : '' ?><a href="logout.php" class="btn btn-outline-light ml-3">Sair</a></em>
             </div>
 
         </header>
