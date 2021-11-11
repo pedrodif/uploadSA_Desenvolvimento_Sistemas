@@ -1,6 +1,6 @@
 <?php
-    require_once "cabecalho.php";
-   
+require_once "cabecalho.php";
+
 ?>
 
 <div class="form-row  justify-content-center">
@@ -8,7 +8,7 @@
         <img src="imgs/cpf.jpg" class="card-img-top" alt="CPF">
         <div class="card-body">
             <h5 class="card-title">Cadastro de Pessoa Física</h5>
-            <a href="#" class="btn btn-success font-weight-bold">ACESSE</a>
+            <a href="cadastroPF/manterCPF.php" class="btn btn-success font-weight-bold">ACESSE</a>
         </div>
     </div>
 
@@ -23,5 +23,5 @@
 
 <?php
 
-    require_once "rodape.php";
+require_once "rodape.php";
 ?>

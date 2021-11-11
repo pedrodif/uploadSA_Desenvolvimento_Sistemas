@@ -10,7 +10,7 @@ $resultado = $conexao->query($query);
 
 ?>
 
-<div>
+<div class="table-responsive">
 
     <table class="table table-striped">
 
@@ -59,7 +59,7 @@ $resultado = $conexao->query($query);
                     <td><?= $value['municipio'] ?></td>
                     <td><?= $value['uf'] ?></td>
                     <td><?= date("j/m/Y H:i:s", strtotime($value['dtcriacao'])) ?></td>
-                    <td><a href="../index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
+                    <td><a href="manterCPF.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">Editar</a></td>
                     <td><a href="deleteCPF.php?id=<?= $value['id'] ?>" class="btn btn-danger text-center">Deletar</a></td>
                 </tr>
 
@@ -75,7 +75,7 @@ $resultado = $conexao->query($query);
 
     <div class="form-group" col-md-1>
 
-        <a href="../index.php" class="btn btn-primary text-center">Voltar</a>
+        <a href="../recurso.php" class="btn btn-primary text-center">Voltar</a>
 
     </div>
 

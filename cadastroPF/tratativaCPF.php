@@ -5,7 +5,7 @@ if (isset($_GET['id']))
 else
     $flag = 1;
 
-require_once "./conexao.php";
+require_once "../conexao.php";
 
 
 $array_erro = [];
@@ -82,7 +82,7 @@ if (count($array_erro) > 0) {
             $uf
         );
         $conexao->close();
-        require_once "./rodape.php";
+        require_once "../rodape.php";
         btns('cadastroPF/lista_dadosCPF', './index');
         exit();
     } else {
