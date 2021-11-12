@@ -1,7 +1,7 @@
 <?php
 
-require_once "./cabecalho.php";
-require_once "./funcoes.php";
+require_once "../cabecalho.php";
+require_once "../funcoes.php";
 
 $flag = 1;
 
@@ -42,7 +42,7 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
         <div class="form-group col-md-2">
             <label for="modalidades">Sexo</label><br>
             <select type="text" name="sexo" class="form-control " id="sexo" value="<?= isset($sexo) ? $sexo : '' ?>">
-                <option name="sexo" value="feminino" selected>Feminino</option>
+                <option name="sexo" value="feminino">Feminino</option>
                 <option name="sexo" value="masculino">Masculino</option>
                 <option name="sexo" value="outros">Outros</option>
             </select>
@@ -95,7 +95,7 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
             <?php else : ?>
                 <input type="submit" name="alterar" class="btn btn-success text-center" value="ALTERAR">
             <?php endif ?>
-            <a href="cadastroPF/lista_dadosCPF.php" class="btn btn-warning text-center">VER DADOS</a>
+            <a href="lista_dadosCPF.php" class="btn btn-warning text-center">VER DADOS</a>
 
         </div>
     </div>
@@ -105,6 +105,6 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
 
 <?php
 
-require_once "./rodape.php";
+require_once "../rodape.php";
 
 ?>

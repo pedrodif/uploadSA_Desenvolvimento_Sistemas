@@ -1,16 +1,16 @@
 <?php
 
-    session_start();
-    include "../conexao.php";
-    require_once "../cabecalho.php";
+session_start();
+include "../conexao.php";
+require_once "../cabecalho.php";
 
 
-    $query = "SELECT * FROM  dadosCnpj ";
-    $resultado = $conexao->query($query);
+$query = "SELECT * FROM  dadosCnpj ";
+$resultado = $conexao->query($query);
 
 ?>
 
-<div>
+<div class="table-responsive">
 
     <table class="table table-striped">
 
@@ -69,7 +69,7 @@
                     <td><?= $value['email'] ?></td>
                     <td><?= $value['telefone'] ?></td>
                     <td><?= $value['situacao'] ?></td>
-                    <td><?= $value['data_situacao']?></td>
+                    <td><?= $value['data_situacao'] ?></td>
                     <td><?= date("j/m/Y H:i:s", strtotime($value['dtCriacao'])) ?></td>
                     <td><a href="../index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white font-weight-bold">EDITAR</a></td>
                     <td><a href="deleteCNPJ.php?id=<?= $value['id'] ?>" class="btn btn-danger text-center font-weight-bold">DELETAR</a></td>
@@ -95,6 +95,6 @@
 
 <?php
 
-    require_once "../rodape.php";
+require_once "../rodape.php";
 
 ?>
