@@ -71,8 +71,8 @@ $resultado = $conexao->query($query);
                     <td><?= $value['situacao'] ?></td>
                     <td><?= $value['data_situacao'] ?></td>
                     <td><?= date("j/m/Y H:i:s", strtotime($value['dtCriacao'])) ?></td>
-                    <td><a href="../index.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white font-weight-bold">EDITAR</a></td>
-                    <td><a href="deleteCNPJ.php?id=<?= $value['id'] ?>" class="btn btn-danger text-center font-weight-bold">DELETAR</a></td>
+                    <td><a href="manterCNPJ.php?id=<?= $value['id'] ?>" class="btn btn-warning text-center text-white">EDITAR</a></td>
+                    <td><a href="deleteCNPJ.php?id=<?= $value['id'] ?>" class="btn btn-danger text-center">DELETAR</a></td>
                 </tr>
 
             <?php } ?>
@@ -87,7 +87,7 @@ $resultado = $conexao->query($query);
 
     <div class="form-group" col-md-1>
 
-        <a href="../index.php" class="btn btn-primary text-center font-weight-bold">VOLTAR</a>
+        <a href="manterCNPJ.php" class="btn btn-primary text-center">VOLTAR</a>
 
     </div>
 

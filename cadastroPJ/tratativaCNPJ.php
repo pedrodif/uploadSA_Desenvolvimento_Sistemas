@@ -60,7 +60,6 @@
 
         if (!$flag) {
 
-            //alterar os campos para o update 
             $query = "UPDATE dadosCnpj SET cnpj = '$cnpj', tipo = '$tipo',
                 abertura = '$abertura', nome = '$nome', fantasia = '$fantasia ', naturezaJuridica = '$natureza_juridica', atvPrincipal = '$atividade_principal', atvSecundaria = '$atividades_secundarias',
                 cep = '$cep', logradouro = '$logradouro', 	numero = '$numero', complemento = '$complemento', bairro = '$bairro', municipio = '$municipio',

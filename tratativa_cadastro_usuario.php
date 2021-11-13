@@ -17,9 +17,13 @@
         $query = "INSERT INTO usuario values(NULL, '$nome', '$email', SHA1('$senha'), NOW())";
         $resultado = $conexao->query($query);
         if ($resultado) {
+
             informaSucesso('Usuário criado com sucesso!');
-            unset($nomeCompleto, $email, $usuario, $senha);
             $conexao->close();
+
+            require_once "rodape.php";
+            exit();
+
         } else {
             InformaErro('Não foi possível criar usuário.');
         }

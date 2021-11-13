@@ -1,6 +1,6 @@
 <?php
 
-    include "./conexao.php";
+    include "../conexao.php";
 
     $flag = 0;
 
@@ -12,6 +12,7 @@
         foreach ($resultado as $linha) {
             foreach ($linha as $key => $elemento) {
                 $$key = $elemento;
+        
             }
         }
 

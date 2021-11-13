@@ -8,10 +8,12 @@
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="imgs/icon_logo.png" type="image/x-icon">
+    <title>Cadastros e Consultas</title>
 </head>
 
 
-<body class="bg-secondary">
+<body class="bg-light">
     
     <div class="form-row justify-content-center">
 
@@ -28,7 +30,7 @@
             <div class="form-group text-center justify-content-center">
                 <img src="imgs/icon_logo.png" alt="logo" class="logo">
                 
-                <h2>Cadastros e Consultas</h2>
+                
             </div>
 
 
@@ -49,8 +51,8 @@
 
             <div class="form-group text-center justify-content-center">
 
-                <input type="submit" name="submit_login" value="ENTRAR" class="btn btn-primary font-weight-bold">
-                <a href="cadastro_usuario.php" class="btn btn-success text-white font-weight-bold">CADASTRAR USUÁRIO</a>
+                <input type="submit" name="submit_login" value="ENTRAR" class="btn btn-success">
+                <a href="cadastro_usuario.php" class="btn btn-secondary text-white">CADASTRAR USUÁRIO</a>
 
             </div>
 

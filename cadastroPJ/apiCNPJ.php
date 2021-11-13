@@ -1,7 +1,7 @@
 <?php
 
-    require_once "./funcoes.php";
-    //echo __FILE__."funcoes.php";
+    require_once "../funcoes.php";
+    
 
     if (isset($_GET['submit'])) {
         $cnpj = $_GET['pesquisa'];

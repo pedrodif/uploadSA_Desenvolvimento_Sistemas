@@ -1,7 +1,8 @@
 <?php
 
-require_once "./cabecalho.php";
-require_once "./funcoes.php";
+require_once "../funcoes.php";
+login();
+require_once "../cabecalho.php";
 
 $flag = 1;
 
@@ -18,6 +19,7 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
 ?>
 
 
+
 <h3>BUSCA CNPJ</h3>
 
 <form action="" method="get">
@@ -31,6 +33,10 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
 
         <div class="form-group col-md-2 ">
             <input type="submit" name="submit" value="BUSCAR" class="btn btn-warning text-center text-white font-weight-bold">
+        </div>
+
+        <div class="homeloc">
+           <a href="../index.php"><img src="../imgs/home.png" alt="home" class="home"></a>
         </div>
 
     </div>
@@ -90,7 +96,7 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
         <div class="form-group col-md-6">
             <label>Código-Descrição da atividade econômica principal</label>
             <?php if (isset($atividade_principal)) {
-                if (isset($_GET)) { ?>
+                if (isset($_GET['id'])) { ?>
                     <input type="text" class="form-control" name="atividade_principal" value="<?= $atividade_principal ?>">
                     <?php  } else {
                     foreach ((object)$atividade_principal as $value) { ?>
@@ -109,7 +115,7 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
                     <input type="text" class="form-control" name="atividades_secundarias" value="<?= $value->code . '-' . $value->text ?>">
                 <?php }
             } else { ?>
-                <input type="text" class="form-control" name="atividades_secundarias" value="">
+                <input type="text" class="form-control" name="atividades_secundarias" value="<?= isset($atividade_secundaria)? $atividade_secundaria : '' ?>">
             <?php } ?>
         </div>
 
@@ -203,11 +209,11 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
         <div class="form-group" col-md-1>
 
             <?php if ($flag) : ?>
-                <input type="submit" name="cadastrar" class="btn btn-success text-center font-weight-bold" value="CADASTRAR">
+                <input type="submit" name="cadastrar" class="btn btn-success text-center" value="CADASTRAR">
             <?php else : ?>
-                <input type="submit" name="alterar" class="btn btn-success text-center font-weight-bold" value="ALTERAR">
+                <input type="submit" name="alterar" class="btn btn-success text-center" value="ALTERAR">
             <?php endif ?>
-            <a href="cadastroPJ/lista_dadosCNPJ.php" class="btn btn-warning text-white text-center font-weight-bold">VER DADOS</a>
+            <a href="lista_dadosCNPJ.php" class="btn btn-warning text-white text-center">VER DADOS</a>
 
         </div>
     </div>
@@ -218,6 +224,6 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
 
 <?php
 
-require_once "./rodape.php";
+require_once "../rodape.php";
 
 ?>

@@ -44,11 +44,7 @@
         <div class="form-row">
 
             <div class="form-group col-md-0">
-                <input type="submit" name="criar" value="CRIAR USUÁRIO" class="btn btn-success text-center font-weight-bold">
-            </div>
-
-            <div class="form-group col-md-0">
-                <a href="index.php"><button type="button" class="btn btn-primary text-light font-weight-bold">VOLTAR</button></a>
+                <input type="submit" name="criar" value="CRIAR USUÁRIO" class="btn btn-success text-center">
             </div>
 
         </div>

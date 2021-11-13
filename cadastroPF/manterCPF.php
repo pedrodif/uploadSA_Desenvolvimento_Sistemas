@@ -1,7 +1,8 @@
 <?php
 
-require_once "../cabecalho.php";
 require_once "../funcoes.php";
+login();
+require_once "../cabecalho.php";
 
 $flag = 1;
 
@@ -14,6 +15,7 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
 ?>
 
 <h2>CADASTRO PESSOA FÍSICA</h2>
+<br>
 <form action="#" method="post">
     <div class="form-row">
         <div class="form-group col-md-8">
@@ -48,6 +50,8 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
             </select>
         </div>
     </div>
+
+    <br>
 
     <h5>Endereço</h5>
     <div class="form-row">
@@ -95,7 +99,7 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
             <?php else : ?>
                 <input type="submit" name="alterar" class="btn btn-success text-center" value="ALTERAR">
             <?php endif ?>
-            <a href="lista_dadosCPF.php" class="btn btn-warning text-center">VER DADOS</a>
+            <a href="lista_dadosCPF.php" class="btn btn-warning text-center text-white">VER DADOS</a>
 
         </div>
     </div>
