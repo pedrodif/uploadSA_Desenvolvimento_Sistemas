@@ -4,17 +4,3 @@
 }
 
 
-.home{
-    width: 60px;
-    height: 55px;
-    border-radius: 50%;
-}
-
-.home:hover{
-    box-shadow: inset 5em 1em rgb(255, 135, 62);
-}
-
-.homeloc{
-    margin-left: 60%;
-    margin-bottom: 3%;
-}

@@ -15,7 +15,11 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
 ?>
 
 <h2>CADASTRO PESSOA FÍSICA</h2>
-<br>
+
+<div class="homelocCPF">
+    <a href="../index.php"><img src="../imgs/home.jpeg" alt="home" class="homeCPF"></a>
+</div>
+
 <form action="#" method="post">
     <div class="form-row">
         <div class="form-group col-md-8">

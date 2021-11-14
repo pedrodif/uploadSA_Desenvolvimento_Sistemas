@@ -36,7 +36,7 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
         </div>
 
         <div class="homeloc">
-           <a href="../index.php"><img src="../imgs/home.png" alt="home" class="home"></a>
+           <a href="../index.php"><img src="../imgs/home.jpeg" alt="home" class="home"></a>
         </div>
 
     </div>
