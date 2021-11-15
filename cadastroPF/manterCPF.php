@@ -11,6 +11,10 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
     require_once "seleciona_dadosCPF.php";
 }
 
+if ($flag == 1) {
+    $sexo = "";
+}
+
 ?>
 
 <h2>CADASTRO PESSOA FÍSICA</h2>
@@ -42,9 +46,9 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
         <div class="form-group col-md-2">
             <label for="modalidades">Sexo</label><br>
             <select type="text" name="sexo" class="form-control " id="sexo" value="<?= isset($sexo) ? $sexo : '' ?>">
-                <option name="sexo" value="feminino">Feminino</option>
-                <option name="sexo" value="masculino">Masculino</option>
-                <option name="sexo" value="outros">Outros</option>
+                <option name="sexo" value="feminino" <?= $sexo === "feminino" ? 'selected' : '' ?>>Feminino</option>
+                <option name="sexo" value="masculino" <?= $sexo === "masculino" ? 'selected' : '' ?>>Masculino</option>
+                <option name="sexo" value="outros" <?= $sexo === "outros" ? 'selected' : '' ?>>Outros</option>
             </select>
         </div>
     </div>
