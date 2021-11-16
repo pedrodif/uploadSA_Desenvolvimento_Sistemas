@@ -5,7 +5,7 @@
     else
         $flag = 1;
 
-    include "./conexao.php";
+    include "../conexao.php";
 
 
     $array_erro = [];
@@ -21,10 +21,6 @@
     empty($_POST['fantasia']) ? $array_erro['fantasia'] = "Campo nome fantasia não preenchido" : $fantasia = trim($_POST['fantasia']);
 
     empty($_POST['naturezaJuridica']) ? $array_erro['naturezaJuridica'] = "Campo natureza jurídica não preenchido" : $natureza_juridica = trim($_POST['naturezaJuridica']);
-
-    empty($_POST['atividade_principal']) ? $array_erro['atividade_principal'] = "Campo atividade principal não preenchido" : $atividade_principal = trim($_POST['atividade_principal']);
-
-    empty($_POST['atividades_secundarias']) ? $array_erro['atividades_secundarias'] = "Campo atividade secundária não preenchido" : $atividades_secundarias = trim($_POST['atividades_secundarias']);
 
     empty($_POST['cep']) ? $array_erro['cep'] = "Campo CEP não preenchido" : $cep = trim($_POST['cep']);
 
@@ -46,7 +42,7 @@
 
     empty($_POST['situacao']) ? $array_erro['situacao'] = "Campo situação não preenchido" : $situacao = trim($_POST['situacao']);
 
-    empty($_POST['dtSituacao']) ? $array_erro['dtSituacao'] = "Campo data situação não preenchido" : $data_situacao = trim($_POST['dtSituacao']);
+    empty($_POST['dtSituacao']) ? $array_erro['dtSituacao'] = "Campo data de cadastro não preenchido" : $data_situacao = trim($_POST['dtSituacao']);
 
     if (count($array_erro) > 0) {
 
@@ -61,13 +57,13 @@
         if (!$flag) {
 
             $query = "UPDATE dadosCnpj SET cnpj = '$cnpj', tipo = '$tipo',
-                abertura = '$abertura', nome = '$nome', fantasia = '$fantasia ', naturezaJuridica = '$natureza_juridica', atvPrincipal = '$atividade_principal', atvSecundaria = '$atividades_secundarias',
+                abertura = '$abertura', nome = '$nome', fantasia = '$fantasia ', natureza_juridica = '$natureza_juridica',
                 cep = '$cep', logradouro = '$logradouro', 	numero = '$numero', complemento = '$complemento', bairro = '$bairro', municipio = '$municipio',
-                uf = '$uf', email = '$email', telefone = '$telefone', situacao = '$situacao', dtSituacao = '$data_situacao', 
-                WHERE id = {$_POST['id']}";
+                uf = '$uf', email = '$email', telefone = '$telefone', situacao = '$situacao', data_situacao = '$data_situacao'
+                WHERE id = {$_GET['id']}";
         } else {
             $query = "INSERT INTO dadosCnpj values(NULL, '$cnpj', '$tipo',
-                '$abertura', '$nome', '$fantasia ', '$natureza_juridica', '$atividade_principal', '$atividades_secundarias',
+                '$abertura', '$nome', '$fantasia ', '$natureza_juridica',
                 '$cep', '$logradouro', '$numero', '$complemento', '$bairro', '$municipio',
                 '$uf', '$email', '$telefone', '$situacao', '$data_situacao',  NOW())";
             }
@@ -83,8 +79,6 @@
                 $nome,
                 $fantasia,
                 $natureza_juridica,
-                $atividade_principal,
-                $atividades_secundarias,
                 $cep,
                 $logradouro,
                 $numero,
@@ -99,8 +93,8 @@
             );
             $conexao->close();
 
-            require_once "./rodape.php";
-            btns('cadastroPJ/lista_dadosCNPJ', '../index');
+            require_once "../rodape.php";
+            btns('lista_dadosCNPJ', '../index');
             exit();
         } else {
             informaErro('Não foi possível realizar a operação: ' . $conexao->error);

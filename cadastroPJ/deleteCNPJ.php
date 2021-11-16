@@ -39,8 +39,6 @@ if (isset($_POST['submit'])) {
                 <th scope="col">Razão Social</th>
                 <th scope="col">Nome Fantasia</th>
                 <th scope="col">Natureza jurídica</th>
-                <th scope="col">Atividade Principal</th>
-                <th scope="col">Atividades Secundárias</th>
                 <th scope="col">CEP</th>
                 <th scope="col">Logradouro</th>
                 <th scope="col">Número</th>
@@ -69,8 +67,6 @@ if (isset($_POST['submit'])) {
                     <td><?= $value['nome'] ?></td>
                     <td><?= $value['fantasia'] ?></td>
                     <td><?= $value['natureza_juridica'] ?></td>
-                    <td><?= $value['atividade_principal'] ?></td>
-                    <td><?= $value['atividade_secundaria'] ?></td>
                     <td><?= $value['cep'] ?></td>
                     <td><?= $value['logradouro'] ?></td>
                     <td><?= $value['numero'] ?></td>

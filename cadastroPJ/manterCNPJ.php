@@ -91,35 +91,6 @@ if (isset($_POST['cadastrar']) || isset($_POST['alterar'])) {
     </div>
 
 
-    <div class="form-row">
-
-        <div class="form-group col-md-6">
-            <label>Código-Descrição da atividade econômica principal</label>
-            <?php if (isset($atividade_principal)) {
-                if (isset($_GET['id'])) { ?>
-                    <input type="text" class="form-control" name="atividade_principal" value="<?= $atividade_principal ?>">
-                    <?php  } else {
-                    foreach ((object)$atividade_principal as $value) { ?>
-                        <input type="text" class="form-control" name="atividade_principal" value="<?= $value->code . '-' . $value->text ?>">
-                <?php }
-                }
-            } else { ?>
-                <input type="text" class="form-control" name="atividade_principal" value="">
-            <?php } ?>
-        </div>
-
-        <div class="form-group col-md-6">
-            <label>Código-Descrição das atividades econômicas secundárias</label>
-            <?php if (isset($atividades_secundarias)) {
-                foreach ((object)$atividades_secundarias as $value) { ?>
-                    <input type="text" class="form-control" name="atividades_secundarias" value="<?= $value->code . '-' . $value->text ?>">
-                <?php }
-            } else { ?>
-                <input type="text" class="form-control" name="atividades_secundarias" value="<?= isset($atividade_secundaria)? $atividade_secundaria : '' ?>">
-            <?php } ?>
-        </div>
-
-    </div>
 
     <br>
     <h5>Endereço</h5>
